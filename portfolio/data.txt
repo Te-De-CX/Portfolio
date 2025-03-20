@@ -1,0 +1,17 @@
+Style Guide:
+
+    font family: Inter
+
+    font sizes:
+        large: 128
+        websites name: 48
+        medium: 32
+        footer text: 36
+        work cards: 40
+        small: 28
+        extra-small: 20
+        extra-large: 140
+
+    colors: black, white, transparent, gray (#D9D9D9), red (#FF0004)
+
+    margin: 50 
