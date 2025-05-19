@@ -175,7 +175,7 @@ useEffect(() => {
     }
 
     // Draw food
-    ctx.fillStyle = 'black';
+    ctx.fillStyle = 'red';
     ctx.beginPath();
     ctx.arc(
       food.x * CELL_SIZE + CELL_SIZE / 2,
