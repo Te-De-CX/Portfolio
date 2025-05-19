@@ -16,7 +16,7 @@ const First = () => {
         </div>
         
         {/* Profile Image */}
-        <div className="order-1 md:order-2 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 overflow-hidden rounded-full border-2 border-black shadow-lg">
+        <div className="order-1 md:order-2 w-24 h-24 sm:w-32 sm:h-32 md:w-56 md:h-56 md:left-20 relative overflow-hidden rounded-full border-2 border-black shadow-lg">
           <Image 
             src={Profile}
             alt="Profile image"
