@@ -3,12 +3,10 @@
 import { motion } from "framer-motion";
 import { EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/outline";
 import { LinkedinIcon, GithubIcon, TwitterIcon } from "@/components/components/Icons"; 
-import FloatingCirclesBackground from "./FloatingCircles";
 
 const Footer = () => {
   return (
     <footer className="relative bg-black text-white overflow-hidden">
-      <FloatingCirclesBackground />
 
       <div className="relative z-10 px-6 sm:px-10 md:px-20 py-16 md:py-24">
         <div className="max-w-7xl mx-auto">
@@ -36,7 +34,6 @@ const Footer = () => {
                   <GithubIcon className="h-6 w-6" />
                 </motion.a>
                 
-      <FloatingCirclesBackground />
                 <motion.a 
                   href="https://twitter.com" 
                   target="_blank"
@@ -68,7 +65,6 @@ const Footer = () => {
                 >
                   <span className="relative z-10">Get in touch</span>
                   
-      <FloatingCirclesBackground />
                   <motion.span 
                     className="absolute inset-0 bg-gray-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                     initial={{ scale: 0 }}
