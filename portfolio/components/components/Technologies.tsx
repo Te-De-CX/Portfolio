@@ -13,7 +13,7 @@ import {
 import {
   SiTypescript, SiNextdotjs, SiExpress, SiMongodb, SiPostgresql, SiTailwindcss,
   SiRedux, SiGraphql, SiDocker, SiJest, SiReactrouter, SiDjango, SiVuedotjs,
-  SiAngular, SiBootstrap, SiSass, SiLess, SiRubyonrails, SiGo, SiWebpack,
+  SiAngular, SiBootstrap, SiSass, SiLess, SiGo, SiWebpack,
   SiVite, SiEslint, SiPrettier, SiPostman, SiFigma
 } from 'react-icons/si';
 import { TbBrandReactNative } from 'react-icons/tb';
@@ -120,7 +120,7 @@ const Technologies = () => {
     { id: 18, name: "Python", icon: <FaPython />, category: 'backend', color: getTechColor("Python") },
     { id: 19, name: "PHP", icon: <FaPhp />, category: 'backend', color: getTechColor("PHP") },
     { id: 20, name: "Laravel", icon: <FaLaravel />, category: 'backend', color: getTechColor("Laravel") },
-    { id: 21, name: "Ruby on Rails", icon: <SiRubyonrails />, category: 'backend', color: getTechColor("Ruby on Rails") },
+    // { id: 21, name: "Ruby on Rails", icon: <SiRubyonrails />, category: 'backend', color: getTechColor("Ruby on Rails") },
     { id: 22, name: "Go", icon: <SiGo />, category: 'backend', color: getTechColor("Go") },
     { id: 23, name: "GraphQL", icon: <SiGraphql />, category: 'backend', color: getTechColor("GraphQL") },
     { id: 24, name: "MongoDB", icon: <SiMongodb />, category: 'backend', color: getTechColor("MongoDB") },
