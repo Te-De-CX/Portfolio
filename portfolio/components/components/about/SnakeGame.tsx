@@ -8,7 +8,7 @@ type Position = { x: number; y: number };
 
 const GRID_SIZE = 20;
 const CELL_SIZE = 20;
-const GAME_SPEED = 100;
+const GAME_SPEED = 200;
 
 export default function SnakeGame() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
