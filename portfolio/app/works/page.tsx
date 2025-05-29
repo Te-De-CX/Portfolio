@@ -1,8 +1,13 @@
 'use client';
 
+import Image1 from '@/public/images/Thumbnail.jpg';
+import Image2 from '@/public/images/tam.png';
+
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
+import { StaticImageData } from 'next/image';
+import Image from 'next/image';
 
 type Project = {
   id: number;
@@ -10,7 +15,7 @@ type Project = {
   description: string;
   tags: string[];
   link: string;
-  image: string;
+  image: string | StaticImageData;
   category: 'web' | 'mobile' | 'design';
 };
 
@@ -21,17 +26,17 @@ const WorkPage = () => {
   const projects: Project[] = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
+      title: 'Food Ordering Platform',
       description: 'Full-featured online store with payment integration and inventory management.',
       tags: ['React', 'Node.js', 'MongoDB'],
-      link: 'https://ecommerce.example.com',
-      image: '/project1.jpg',
+      link: 'https://tamang-foodservice.vercel.app',
+      image: Image2,
       category: 'web'
     },
     {
       id: 2,
-      title: 'Health Tracking App',
-      description: 'Mobile app for tracking fitness metrics and health data with beautiful visualizations.',
+      title: 'Music Player App',
+      description: 'Mobile app for playing and discovering music with personalized playlists.',
       tags: ['React Native', 'Firebase', 'TypeScript'],
       link: 'https://healthapp.example.com',
       image: '/project2.jpg',
@@ -42,7 +47,7 @@ const WorkPage = () => {
       title: 'Portfolio Website',
       description: 'Minimalist portfolio design with smooth animations and dark mode.',
       tags: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
-      link: 'https://portfolio.example.com',
+      link: 'https://tedecx.vercel.app',
       image: '/project3.jpg',
       category: 'design'
     },
@@ -54,15 +59,6 @@ const WorkPage = () => {
       link: 'https://tasks.example.com',
       image: '/project4.jpg',
       category: 'web'
-    },
-    {
-      id: 5,
-      title: 'Restaurant Finder',
-      description: 'Mobile app for discovering local restaurants with reviews and reservations.',
-      tags: ['Flutter', 'Google Maps API'],
-      link: 'https://restaurants.example.com',
-      image: '/project5.jpg',
-      category: 'mobile'
     },
     {
       id: 6,
@@ -78,18 +74,9 @@ const WorkPage = () => {
       title: 'Blog Platform',
       description: 'Headless CMS with custom editor and SEO optimization.',
       tags: ['Next.js', 'Sanity.io', 'SSG'],
-      link: 'https://blog.example.com',
-      image: '/project7.jpg',
+      link: 'https://futuretech-sand.vercel.app',
+      image: Image1,
       category: 'web'
-    },
-    {
-      id: 8,
-      title: 'Fitness Challenge App',
-      description: 'Gamified fitness challenges with social features.',
-      tags: ['React Native', 'GraphQL', 'AWS'],
-      link: 'https://fitness.example.com',
-      image: '/project8.jpg',
-      category: 'mobile'
     },
     {
       id: 9,
@@ -100,15 +87,15 @@ const WorkPage = () => {
       image: '/project9.jpg',
       category: 'design'
     },
-    {
-      id: 10,
-      title: 'Analytics Dashboard',
-      description: 'Data visualization dashboard with interactive charts and filters.',
-      tags: ['D3.js', 'TypeScript', 'Node.js'],
-      link: 'https://analytics.example.com',
-      image: '/project10.jpg',
-      category: 'web'
-    }
+    // {
+    //   id: 10,
+    //   title: 'Analytics Dashboard',
+    //   description: 'Data visualization dashboard with interactive charts and filters.',
+    //   tags: ['D3.js', 'TypeScript', 'Node.js'],
+    //   link: 'https://analytics.example.com',
+    //   image: '/project10.jpg',
+    //   category: 'web'
+    // }
   ];
 
   const filteredProjects = activeFilter === 'all' 
@@ -180,9 +167,17 @@ const WorkPage = () => {
               >
                 {/* Project Image Placeholder - Replace with your Image component */}
                 <div className="aspect-video bg-gray-100 mb-4 overflow-hidden relative">
-                  <div className="absolute inset-0 flex items-center justify-center text-gray-400">
+                  {/* <div className="absolute inset-0 flex items-center justify-center text-gray-400">
                     Project Image
-                  </div>
+                  </div> */}
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    layout="fill"
+                    objectFit="cover"
+                    className="transition-transform duration-300 group-hover:scale-105" 
+                    placeholder="blur"
+                  />
                   <motion.div
                     className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"
                     animate={{
