@@ -2,6 +2,10 @@
 
 import Image1 from '@/public/images/Thumbnail.jpg';
 import Image2 from '@/public/images/tam.png';
+import Image3 from '@/public/images/Light Showreel.png';
+import Image4 from '@/public/images/now.png';
+import image5 from '@/public/images/figma.png';
+import image6 from '@/public/images/portfolio.png';
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
@@ -28,7 +32,7 @@ const WorkPage = () => {
       id: 1,
       title: 'Food Ordering Platform',
       description: 'Full-featured online store with payment integration and inventory management.',
-      tags: ['React', 'Node.js', 'MongoDB'],
+      tags: ['Next js', 'django',"python", "typescript", "tailwind CSS", 'PostgreSQL'],
       link: 'https://tamang-foodservice.vercel.app',
       image: Image2,
       category: 'web'
@@ -38,8 +42,8 @@ const WorkPage = () => {
       title: 'Music Player App',
       description: 'Mobile app for playing and discovering music with personalized playlists.',
       tags: ['React Native', 'Firebase', 'TypeScript'],
-      link: 'https://healthapp.example.com',
-      image: '/project2.jpg',
+      link: 'https://expo_dev/accounts/demo_3/projects/VibeTune/builds/1b1652b5-8fe2-4a8c-84a0-7807fb1256ec',
+      image: Image3,
       category: 'mobile'
     },
     {
@@ -48,25 +52,25 @@ const WorkPage = () => {
       description: 'Minimalist portfolio design with smooth animations and dark mode.',
       tags: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
       link: 'https://tedecx.vercel.app',
-      image: '/project3.jpg',
+      image: image6,
       category: 'design'
     },
-    {
-      id: 4,
-      title: 'Task Management System',
-      description: 'Collaborative task management tool with real-time updates.',
-      tags: ['Vue.js', 'Express', 'WebSockets'],
-      link: 'https://tasks.example.com',
-      image: '/project4.jpg',
-      category: 'web'
-    },
+    // {
+    //   id: 4,
+    //   title: 'Task Management System',
+    //   description: 'Collaborative task management tool with real-time updates.',
+    //   tags: ['Vue.js', 'Express', 'WebSockets'],
+    //   link: 'https://tasks.example.com',
+    //   image: '/project4.jpg',
+    //   category: 'web'
+    // },
     {
       id: 6,
       title: 'Design System',
       description: 'Comprehensive UI kit and design system for consistent product experiences.',
       tags: ['Figma', 'Storybook'],
-      link: 'https://design.example.com',
-      image: '/project6.jpg',
+      link: 'https://www.figma.com/files/team/1422380592048011883/drafts?fuid=1422380587726580363',
+      image: image5,
       category: 'design'
     },
     {
@@ -80,11 +84,11 @@ const WorkPage = () => {
     },
     {
       id: 9,
-      title: 'Brand Identity',
-      description: 'Complete brand identity for a tech startup including logo and guidelines.',
+      title: 'Social App',
+      description: 'Complete brand identity for a social app including logo and guidelines.',
       tags: ['Illustrator', 'Branding'],
-      link: 'https://brand.example.com',
-      image: '/project9.jpg',
+      link: 'https://www.figma.com/design/S3lsJ94TT7gwKxInfaRS8p/Social-App?t=Tzlnzyz6RTUkHlTr-0',
+      image: Image4,
       category: 'design'
     },
     // {
@@ -174,9 +178,9 @@ const WorkPage = () => {
                     src={project.image}
                     alt={project.title}
                     layout="fill"
+                    sizes='fill'
                     objectFit="cover"
                     className="transition-transform duration-300 group-hover:scale-105" 
-                    placeholder="blur"
                   />
                   <motion.div
                     className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"
