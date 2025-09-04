@@ -6,8 +6,8 @@ import { motion } from "framer-motion";
 import { FaReact, FaPython, FaFigma, FaCss3Alt, FaNodeJs } from "react-icons/fa";
 import { SiDjango } from "react-icons/si";
 
-import Image1 from "@/public/images/home/work/macbook-pro-template-being-used-next-to-a-water-bottle-a19519 (1).png";
-import image2 from "@/public/images/home/work/macbook-mockup-on-a-wooden-table-next-to-a-lamp-21623.png";
+import Image1 from "@/public/images/image5.png";
+import image2 from "@/public/images/image4.png";
 
 const Work = () => {
   const content = [
