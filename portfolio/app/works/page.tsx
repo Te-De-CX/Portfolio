@@ -1,17 +1,17 @@
 'use client';
 
-import Image1 from '@/public/images/Thumbnail.jpg';
+// import Image1 from '@/public/images/Thumbnail.jpg';
 import Image2 from '@/public/images/tam.png';
-import Image3 from '@/public/images/Light Showreel.png';
-import Image4 from '@/public/images/now.png';
-import image5 from '@/public/images/figma.png';
-import image6 from '@/public/images/portfolio.png';
+// import Image3 from '@/public/images/Light Showreel.png';
+// import Image4 from '@/public/images/now.png';
+// import image5 from '@/public/images/figma.png';
+// import image6 from '@/public/images/portfolio.png';
 import image7 from '@/public/images/image1.png';
 import image8 from '@/public/images/image2.png';
-import image9 from '@/public/images/image3.png';
+// import image9 from '@/public/images/image3.png';
 import image10 from '@/public/images/image4.png';
 import image12 from '@/public/images/image6.jpg';
-import image13 from '@/public/images/image7.png';
+// import image13 from '@/public/images/image7.png';
 import image14 from '@/public/images/image8.webp';
 import image15 from '@/public/images/image8.png';
 
