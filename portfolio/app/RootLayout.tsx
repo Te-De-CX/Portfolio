@@ -19,7 +19,7 @@ export default function RootLayoutClient({ children }: { children: React.ReactNo
   ) : (
     <>
       <Nav />
-      <main className="flex-1 pt-20">
+      <main className="flex-1 pt-10">
         {/* <WaterCircleFollow /> */}
         {children}
       </main>

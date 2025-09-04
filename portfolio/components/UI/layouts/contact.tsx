@@ -1,19 +1,18 @@
 'use client';
 
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 import { PaperAirplaneIcon } from '@heroicons/react/24/outline';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: ''
+    message: '',
   });
   const [errors, setErrors] = useState({
     name: '',
     email: '',
-    message: ''
+    message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
@@ -22,13 +21,12 @@ const Contact = () => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
-    // Clear error when user types
     if (errors[name as keyof typeof errors]) {
       setErrors(prev => ({
         ...prev,
-        [name]: ''
+        [name]: '',
       }));
     }
   };
@@ -38,7 +36,7 @@ const Contact = () => {
     const newErrors = {
       name: '',
       email: '',
-      message: ''
+      message: '',
     };
 
     if (!formData.name.trim()) {
@@ -81,61 +79,50 @@ const Contact = () => {
   };
 
   return (
-    <section className="px-4 sm:px-8 md:px-16 lg:px-24 py-16 md:py-24 bg-white">
-      <div className="max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="mb-12"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tighter mb-4 text-black">
-            Shoot a Request
-          </h2>
-          <div className="h-1 w-20 bg-black"></div>
-        </motion.div>
+    <section className="px-6 sm:px-12 md:px-24 lg:px-32 py-24 bg-gradient-to-b from-gray-900 to-black relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute -top-56 -right-56 w-[30rem] h-[30rem] bg-gradient-to-br from-[#FF0050] to-[#00F2EA] rounded-full filter blur-3xl opacity-25 animate-pulse" />
+      <div className="absolute -bottom-56 -left-56 w-[30rem] h-[30rem] bg-gradient-to-br from-[#00F2EA] to-[#FF0050] rounded-full filter blur-3xl opacity-25 animate-pulse" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="flex flex-col justify-center"
-          >
-            <div className="text-xl md:text-2xl font-medium mb-8 text-black">
-              Let&apos;s collaborate on something extraordinary. Drop me a message and I&apos;ll get back to you within 24 hours.
+      <div className="max-w-5xl mx-auto relative z-10">
+        <div className="mb-20 text-center">
+          <h2 className="text-5xl md:text-7xl font-extrabold uppercase tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-white via-[#00F2EA] to-[#FF0050]">
+            Get In Touch
+          </h2>
+          <p className="text-lg md:text-xl text-gray-300 mt-4 max-w-3xl mx-auto">
+            Ready to create something amazing together? Send me a message, and I’ll respond within 24 hours.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          {/* Contact Info */}
+          <div className="flex flex-col justify-center">
+            <div className="text-2xl md:text-3xl font-semibold text-gray-100 mb-8">
+              Let’s build something extraordinary. Reach out to discuss your project ideas or explore collaboration opportunities.
             </div>
-            <div className="space-y-2">
-              <div className="text-lg font-semibold text-black">Direct Email</div>
-              <a 
-                href="mailto:tunjiheritage@gmail.com" 
-                className="text-xl hover:underline text-black transition-colors"
+            <div className="space-y-4">
+              <div className="text-lg font-semibold text-white">Email Me Directly</div>
+              <a
+                href="mailto:tunjiheritage@gmail.com"
+                className="text-xl text-[#00F2EA] hover:text-[#FF0050] transition-colors duration-300 underline underline-offset-4"
               >
                 tunjiheritage@gmail.com
               </a>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.form
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            viewport={{ once: true }}
-            onSubmit={handleSubmit}
-            className="space-y-6"
-          >
+          {/* Form */}
+          <form onSubmit={handleSubmit} className="space-y-8">
             <div>
               <input
                 type="text"
                 name="name"
                 placeholder="Your Name"
-                className={`w-full px-4 py-3 border-b border-black focus:outline-none focus:border-b-2 bg-white text-black placeholder-gray-500 ${errors.name ? 'border-red-500' : ''}`}
+                className={`w-full px-5 py-4 bg-gray-900/80 text-gray-100 border border-gray-800/50 focus:border-[#00F2EA] rounded-lg focus:outline-none placeholder-gray-500 transition-all duration-300 ${errors.name ? 'border-red-500' : ''}`}
                 value={formData.name}
                 onChange={handleChange}
               />
-              {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
+              {errors.name && <p className="text-red-500 text-sm mt-2">{errors.name}</p>}
             </div>
 
             <div>
@@ -143,54 +130,48 @@ const Contact = () => {
                 type="email"
                 name="email"
                 placeholder="Your Email"
-                className={`w-full px-4 py-3 border-b border-black focus:outline-none focus:border-b-2 bg-white text-black placeholder-gray-500 ${errors.email ? 'border-red-500' : ''}`}
+                className={`w-full px-5 py-4 bg-gray-900/80 text-gray-100 border border-gray-800/50 focus:border-[#00F2EA] rounded-lg focus:outline-none placeholder-gray-500 transition-all duration-300 ${errors.email ? 'border-red-500' : ''}`}
                 value={formData.email}
                 onChange={handleChange}
               />
-              {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+              {errors.email && <p className="text-red-500 text-sm mt-2">{errors.email}</p>}
             </div>
 
             <div>
               <textarea
                 name="message"
-                placeholder="Your Masterpiece"
-                rows={5}
-                className={`w-full px-4 py-3 border-b border-black focus:outline-none focus:border-b-2 bg-white text-black placeholder-gray-500 ${errors.message ? 'border-red-500' : ''}`}
+                placeholder="Your Message"
+                rows={6}
+                className={`w-full px-5 py-4 bg-gray-900/80 text-gray-100 border border-gray-800/50 focus:border-[#00F2EA] rounded-lg focus:outline-none placeholder-gray-500 transition-all duration-300 ${errors.message ? 'border-red-500' : ''}`}
                 value={formData.message}
                 onChange={handleChange}
               />
-              {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
+              {errors.message && <p className="text-red-500 text-sm mt-2">{errors.message}</p>}
             </div>
 
             <div className="flex justify-end">
-              <motion.button
+              <button
                 type="submit"
                 disabled={isSubmitting}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="bg-black text-white px-8 py-3 uppercase tracking-wider flex items-center gap-2 hover:bg-gray-900 transition-colors disabled:opacity-70"
+                className="bg-gradient-to-r from-[#FF0050] to-[#00F2EA] text-white px-10 py-4 rounded-lg font-semibold uppercase tracking-wider hover:from-[#00F2EA] hover:to-[#FF0050] transition-all duration-300 shadow-lg shadow-[#FF0050]/40 hover:shadow-[#00F2EA]/40 flex items-center gap-3 disabled:opacity-60"
               >
                 {isSubmitting ? (
                   'Sending...'
                 ) : (
                   <>
-                    <span>Send</span>
-                    <PaperAirplaneIcon className="h-5 w-5" />
+                    <span>Send Message</span>
+                    <PaperAirplaneIcon className="h-6 w-6" />
                   </>
                 )}
-              </motion.button>
+              </button>
             </div>
 
             {submitSuccess && (
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="bg-gray-100 text-black p-4 rounded-md border border-black"
-              >
-                Message sent successfully! I&apos;ll get back to you soon.
-              </motion.div>
+              <div className="bg-gray-900/90 text-gray-100 p-5 rounded-lg border border-[#00F2EA]/50 shadow-md">
+                Message sent successfully! I’ll get back to you soon.
+              </div>
             )}
-          </motion.form>
+          </form>
         </div>
       </div>
     </section>

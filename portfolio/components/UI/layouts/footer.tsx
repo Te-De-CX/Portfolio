@@ -1,4 +1,5 @@
-'use client'; // Add this at the very top
+// components/UI/layouts/footer.js
+'use client';
 
 import { motion } from "framer-motion";
 import { EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/outline";
@@ -13,35 +14,35 @@ const Footer = () => {
           {/* Top Section - Social & CTA */}
           <div className="flex flex-col lg:flex-row justify-between gap-12 mb-20">
             <div className="space-y-6">
-              <h3 className="text-xl font-semibold tracking-wider">CONNECT</h3>
+              <h3 className="text-xl font-semibold tracking-wider text-[#00F2EA]">CONNECT</h3>
               <div className="flex gap-6">
                 <motion.a 
                   href="https://linkedin.com" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{ y: -4 }}
-                  className="hover:text-blue-400 transition-colors"
+                  whileHover={{ y: -4, color: "#00F2EA" }}
+                  className="text-gray-400 hover:text-[#00F2EA] transition-colors"
                 >
-                  <LinkedinIcon className="h-6 w-6" />
+                  <LinkedinIcon className="h-7 w-7" />
                 </motion.a>
                 <motion.a 
                   href="https://github.com" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{ y: -4 }}
-                  className="hover:text-purple-400 transition-colors"
+                  whileHover={{ y: -4, color: "#00F2EA" }}
+                  className="text-gray-400 hover:text-[#00F2EA] transition-colors"
                 >
-                  <GithubIcon className="h-6 w-6" />
+                  <GithubIcon className="h-7 w-7" />
                 </motion.a>
                 
                 <motion.a 
                   href="https://twitter.com" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{ y: -4 }}
-                  className="hover:text-blue-300 transition-colors"
+                  whileHover={{ y: -4, color: "#00F2EA" }}
+                  className="text-gray-400 hover:text-[#00F2EA] transition-colors"
                 >
-                  <TwitterIcon className="h-6 w-6" />
+                  <TwitterIcon className="h-7 w-7" />
                 </motion.a>
               </div>
             </div>
@@ -58,19 +59,15 @@ const Footer = () => {
               </motion.p>
               
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-                <motion.button
+                <motion.a
+                  href="mailto:hello@tedecx.com"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-white text-black px-8 py-4 font-medium tracking-wider uppercase relative overflow-hidden group"
+                  className="relative overflow-hidden group bg-gradient-to-r from-[#FF0050] to-[#FF0050]/80 text-white px-8 py-4 font-medium tracking-wider uppercase rounded-full"
                 >
                   <span className="relative z-10">Get in touch</span>
-                  
-                  <motion.span 
-                    className="absolute inset-0 bg-gray-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    initial={{ scale: 0 }}
-                    whileHover={{ scale: 1 }}
-                  />
-                </motion.button>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#FF0050]/90 to-[#FF0050]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </motion.a>
 
                 <motion.div 
                   className="flex items-center gap-3"
@@ -80,10 +77,9 @@ const Footer = () => {
                   viewport={{ once: true }}
                 >
                   <motion.div 
-                    className="w-3 h-3 rounded-full bg-white"
+                    className="w-3 h-3 rounded-full bg-[#00F2EA]"
                     animate={{
-                      scale: [1, 1.2, 1],
-                      opacity: [0.8, 1, 0.8]
+                      scale: [1, 1.4, 1],
                     }}
                     transition={{
                       duration: 2,
@@ -91,7 +87,7 @@ const Footer = () => {
                       ease: "easeInOut"
                     }}
                   />
-                  <span className="text-sm font-light">Available for work</span>
+                  <span className="text-sm font-light text-gray-400">Available for work</span>
                 </motion.div>
               </div>
             </div>
@@ -99,28 +95,30 @@ const Footer = () => {
 
           {/* Bottom Section - Contact & Copyright */}
           <div className="flex flex-col md:flex-row justify-between gap-8 pt-8 border-t border-gray-800">
-            <div className="space-y-2">
+            <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <PhoneIcon className="h-5 w-5 text-gray-400" />
-                <motion.p 
-                  whileHover={{ x: 4 }}
-                  className="hover:text-gray-300 transition-colors"
+                <PhoneIcon className="h-5 w-5 text-[#00F2EA]" />
+                <motion.a 
+                  href="tel:+2348158444464"
+                  whileHover={{ x: 4, color: "#00F2EA" }}
+                  className="text-gray-400 hover:text-[#00F2EA] transition-colors"
                 >
                   +234 (0)81 5844 4464
-                </motion.p>
+                </motion.a>
               </div>
               <div className="flex items-center gap-3">
-                <EnvelopeIcon className="h-5 w-5 text-gray-400" />
-                <motion.p 
-                  whileHover={{ x: 4 }}
-                  className="hover:text-gray-300 transition-colors"
+                <EnvelopeIcon className="h-5 w-5 text-[#00F2EA]" />
+                <motion.a 
+                  href="mailto:hello@tedecx.com"
+                  whileHover={{ x: 4, color: "#00F2EA" }}
+                  className="text-gray-400 hover:text-[#00F2EA] transition-colors"
                 >
                   hello@tedecx.com
-                </motion.p>
+                </motion.a>
               </div>
             </div>
 
-            <div className="text-gray-400 text-sm space-y-2">
+            <div className="text-gray-500 text-sm space-y-2">
               <motion.p
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}

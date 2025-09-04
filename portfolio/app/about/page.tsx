@@ -10,7 +10,7 @@ const AboutPage = () => {
     return (
         <>
             <AboutHome />
-            <Certifications />
+            {/* <Certifications /> */}
             <SnakeGame />
             <FAQs />
             <Footer />

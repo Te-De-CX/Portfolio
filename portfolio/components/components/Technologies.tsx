@@ -2,9 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import styles from './Technologies.module.css';
-import { SiNestjs, SiFastapi } from 'react-icons/si';
-import { SiJquery, SiAstro, SiRemix, SiQwik, SiSvelte } from 'react-icons/si';
+import { SiNestjs, SiFastapi, SiJquery, SiAstro, SiRemix, SiQwik, SiSvelte } from 'react-icons/si';
 import { SiVercel, SiNetlify, SiHeroku, SiCypress, SiBabel, SiGatsby, SiCloudflare } from 'react-icons/si';
 import {
   FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaGithub, FaNpm,
@@ -52,7 +50,6 @@ const Technologies = () => {
       'Python': '#3776AB',
       'PHP': '#8892BF',
       'Laravel': '#FF2D20',
-      'Ruby on Rails': '#CC0000',
       'Go': '#00ADD8',
       'GraphQL': '#E10098',
       'MongoDB': '#47A248',
@@ -84,9 +81,8 @@ const Technologies = () => {
       'Babel': '#F9DC3E',
       'Gatsby': '#663399',
       'Cloudflare': '#F38020',
-
     };
-    return colorMap[name] || '#4B5563';
+    return colorMap[name] || '#00F2EA';
   };
 
   const techStack: TechItem[] = [
@@ -112,15 +108,12 @@ const Technologies = () => {
     { id: 41, name: "Qwik", icon: <SiQwik />, category: 'frontend', color: getTechColor("Qwik") },
     { id: 42, name: "Svelte", icon: <SiSvelte />, category: 'frontend', color: getTechColor("Svelte") },
 
-    
-
     // Backend
     { id: 16, name: "Node.js", icon: <FaNodeJs />, category: 'backend', color: getTechColor("Node.js") },
     { id: 17, name: "Express", icon: <SiExpress />, category: 'backend', color: getTechColor("Express") },
     { id: 18, name: "Python", icon: <FaPython />, category: 'backend', color: getTechColor("Python") },
     { id: 19, name: "PHP", icon: <FaPhp />, category: 'backend', color: getTechColor("PHP") },
     { id: 20, name: "Laravel", icon: <FaLaravel />, category: 'backend', color: getTechColor("Laravel") },
-    // { id: 21, name: "Ruby on Rails", icon: <SiRubyonrails />, category: 'backend', color: getTechColor("Ruby on Rails") },
     { id: 22, name: "Go", icon: <SiGo />, category: 'backend', color: getTechColor("Go") },
     { id: 23, name: "GraphQL", icon: <SiGraphql />, category: 'backend', color: getTechColor("GraphQL") },
     { id: 24, name: "MongoDB", icon: <SiMongodb />, category: 'backend', color: getTechColor("MongoDB") },
@@ -161,75 +154,87 @@ const Technologies = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.1 }
-    }
+      transition: { staggerChildren: 0.1 },
+    },
   };
-
-  // const item = {
-  //   hidden: { y: 20, opacity: 0 },
-  //   visible: {
-  //     y: 0,
-  //     opacity: 1,
-  //     transition: { duration: 0.5 }
-  //   }
-  // };
 
   const filteredTech = activeCategory === 'all'
     ? techStack
     : techStack.filter(tech => tech.category === activeCategory);
 
   return (
-    <section className={styles.section} id="technologies">
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.6 }}
-      >
-        <h2 className={styles.title}>Technologies</h2>
+    <section className="px-6 sm:px-12 md:px-24 lg:px-32 py-24 bg-gradient-to-b from-gray-900 to-black relative overflow-hidden" id="technologies">
+      {/* Background decoration */}
+      <div className="absolute -top-48 -right-48 w-96 h-96 bg-gradient-to-br from-[#FF0050] to-[#00F2EA] rounded-full filter blur-3xl opacity-30 animate-pulse" />
+      <div className="absolute -bottom-48 -left-48 w-96 h-96 bg-gradient-to-br from-[#00F2EA] to-[#FF0050] rounded-full filter blur-3xl opacity-30 animate-pulse" />
 
-        <div className={styles.tabs}>
+      <motion.div
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-120px" }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="relative z-10"
+      >
+        <h2 className="text-5xl md:text-6xl font-extrabold text-center mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white via-[#00F2EA] to-[#FF0050]">
+          My Tech Arsenal
+        </h2>
+        <p className="text-lg md:text-xl text-gray-300 text-center mb-16 max-w-3xl mx-auto">
+          A curated collection of cutting-edge tools and technologies I wield to craft exceptional digital experiences.
+        </p>
+
+        <div className="flex justify-center gap-4 mb-16 flex-wrap">
           {categories.map((category) => (
-            <button
+            <motion.button
               key={category.id}
-              className={`${styles.tab} ${activeCategory === category.name ? styles.activeTab : ''}`}
+              className={`px-6 py-3 text-base font-semibold transition-all duration-300 ${
+                activeCategory === category.name
+                  ? 'bg-gradient-to-r from-[#FF0050] to-[#00F2EA] text-white shadow-lg shadow-[#FF0050]/40'
+                  : 'bg-gray-800/50 text-gray-200 hover:bg-gray-700/50 border border-gray-700 hover:border-[#00F2EA]/50'
+              } rounded-lg`}
               onClick={() => setActiveCategory(category.name as CategoryType)}
+              whileHover={{ scale: 1.1, boxShadow: "0 0 20px rgba(0, 242, 234, 0.3)" }}
+              whileTap={{ scale: 0.95 }}
             >
               {category.title}
-            </button>
+            </motion.button>
           ))}
         </div>
 
         <motion.div
-          className={styles.container}
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 max-w-7xl mx-auto"
           variants={container}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
+          viewport={{ once: true, margin: "-80px" }}
         >
-          <motion.div className={styles.techGrid}>
-            <AnimatePresence mode="wait">
-              {filteredTech.map((tech) => (
-                <motion.div
-                  key={tech.id}
-                  className={styles.techItem}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.3 }}
-                  whileHover={{ scale: 1.05 }}
+          <AnimatePresence mode="wait">
+            {filteredTech.map((tech) => (
+              <motion.div
+                key={tech.id}
+                className="bg-gray-900/80 p-5 flex flex-col items-center justify-center border border-gray-800/50 hover:border-[#00F2EA]/40 transition-all duration-300 group relative overflow-hidden backdrop-blur-sm"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -30 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+                whileHover={{
+                  y: -8,
+                  boxShadow: "0 12px 30px -5px rgba(0, 242, 234, 0.2)",
+                  background: "rgba(17, 24, 39, 0.9)",
+                }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#00F2EA]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div
+                  className="text-5xl mb-4 relative z-10 group-hover:scale-125 transition-transform duration-300"
+                  style={{ color: tech.color }}
                 >
-                  <div
-                    className={styles.techIcon}
-                    style={{ color: tech.color }}
-                  >
-                    {tech.icon}
-                  </div>
-                  <span className={styles.techName}>{tech.name}</span>
-                </motion.div>
-              ))}
-            </AnimatePresence>
-          </motion.div>
+                  {tech.icon}
+                </div>
+                <span className="text-base font-semibold text-gray-200 relative z-10 group-hover:text-[#00F2EA] transition-colors">
+                  {tech.name}
+                </span>
+              </motion.div>
+            ))}
+          </AnimatePresence>
         </motion.div>
       </motion.div>
     </section>
