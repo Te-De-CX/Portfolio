@@ -1,7 +1,7 @@
 // app/page.js
 'use client';
 
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 import First from "@/components/components/first";
 import Technologies from "@/components/components/Technologies";
 import Work from "@/components/UI/layouts/work";
