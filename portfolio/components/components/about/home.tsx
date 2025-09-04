@@ -1,6 +1,6 @@
 'use client';
 
-import Resume from "@/assets/Resume.pdf"
+// import Resume from "@/assets/Resume.pdf"
 
 import { ArrowDownTrayIcon } from '@heroicons/react/24/outline';
 
@@ -34,14 +34,14 @@ const AboutHome = () => {
             <p className="text-lg md:text-xl leading-relaxed text-gray-300 mb-8">
               I partner with businesses and creators worldwide, leveraging cutting-edge technologies to craft innovative, scalable solutions that drive measurable impact and growth.
             </p>
-            <a
+            {/* <a
               href={Resume}
               download
               className="inline-flex items-center gap-3 bg-gradient-to-r from-[#FF0050] to-[#00F2EA] text-white px-8 py-4 rounded-lg font-semibold uppercase tracking-wider text-sm hover:from-[#00F2EA] hover:to-[#FF0050] transition-all duration-300 shadow-lg shadow-[#FF0050]/40 hover:shadow-[#00F2EA]/40"
             >
               <ArrowDownTrayIcon className="h-6 w-6" />
               Download CV
-            </a>
+            </a> */}
           </div>
 
           {/* Marquee Section */}
