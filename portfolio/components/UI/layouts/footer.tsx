@@ -16,7 +16,7 @@ const Footer = () => {
             <div className="space-y-6">
               <h3 className="text-xl font-semibold tracking-wider text-[#00F2EA]">CONNECT</h3>
               <div className="flex gap-6">
-                <motion.a 
+                {/* <motion.a 
                   href="https://linkedin.com" 
                   target="_blank"
                   rel="noopener noreferrer"
@@ -24,9 +24,9 @@ const Footer = () => {
                   className="text-gray-400 hover:text-[#00F2EA] transition-colors"
                 >
                   <LinkedinIcon className="h-7 w-7" />
-                </motion.a>
+                </motion.a> */}
                 <motion.a 
-                  href="https://github.com" 
+                  href="https://github.com/Te-De-CX" 
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ y: -4, color: "#00F2EA" }}
