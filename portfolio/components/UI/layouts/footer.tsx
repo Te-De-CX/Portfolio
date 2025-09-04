@@ -3,7 +3,7 @@
 
 import { motion } from "framer-motion";
 import { EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/outline";
-import { LinkedinIcon, GithubIcon, TwitterIcon } from "@/components/components/Icons"; 
+import { GithubIcon, TwitterIcon } from "@/components/components/Icons"; 
 
 const Footer = () => {
   return (
