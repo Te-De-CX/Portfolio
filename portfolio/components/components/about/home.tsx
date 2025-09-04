@@ -1,6 +1,6 @@
 'use client';
 
-import Resume from "@/public/images/Resume.pdf"
+import Resume from "@/assets/Resume.pdf"
 
 import { ArrowDownTrayIcon } from '@heroicons/react/24/outline';
 
